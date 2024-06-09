@@ -18,36 +18,51 @@
   <body>
     <div class="main-wrapper">
       <h1 class="title">Login</h1>
-      <div class="login-form">
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label for="floatingInput">Email address</label>
+      <form
+        class="loginform-wrapper"
+        method="post"
+        action="{% url 'login' %}"
+        style="
+          height: 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        "
+      >
+        {% csrf_token %}
+        <div class="login-form">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              name="email"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              name="password"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
         </div>
-        <div class="form-floating">
+        <a href="/home/">
           <input
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
+            type="submit"
+            class="btn btn-outline-light"
+            value="Get Started"
           />
-          <label for="floatingPassword">Password</label>
-        </div>
-      </div>
-      <!-- 검증 넣기 -->
-      <a href="/home.html/">
-        <button type="button" class="btn btn-outline-light">Get Started</button>
-      </a>
-      <div class="login-wrapper">
-        <a href="/signup.html/">
-          <div class="login-option"><u>create account</u></div>
         </a>
-        <a href="/findpw.html/">
-          <div class="login-option"><u>forgot password</u></div>
+      </form>
+      <div class="login-wrapper">
+        <a href="/signup/">
+          <div class="login-option"><u>create account</u></div>
         </a>
       </div>
     </div>

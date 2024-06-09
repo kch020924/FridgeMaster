@@ -131,3 +131,11 @@ textarea {
   row-gap: 20px;
   column-gap: 20px;
 }
+
+#detail_list {
+  width: 500px;
+}
+
+div .btn-group {
+  justify-items: center;
+}
